@@ -1,1 +1,729 @@
-[]
+[
+    {
+        "id": "54ff78c4.b28db8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "620c0c7c.5e6ff4",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "enriquecrespo.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "16656351.5e8d2d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f3e58850.661b88",
+        "type": "ui_tab",
+        "name": "Temperatura",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a8a7326.98f85d",
+        "type": "ui_tab",
+        "name": "CPU",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c9f63861.698908",
+        "type": "ui_tab",
+        "name": "Memoria",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3a1649ac.9d3a66",
+        "type": "ui_group",
+        "name": "Temperaturas",
+        "tab": "f3e58850.661b88",
+        "order": 1,
+        "disp": true,
+        "width": "18",
+        "collapse": false
+    },
+    {
+        "id": "e9b18395.21481",
+        "type": "ui_group",
+        "name": "CPU",
+        "tab": "a8a7326.98f85d",
+        "order": 1,
+        "disp": true,
+        "width": 18,
+        "collapse": false
+    },
+    {
+        "id": "e8c96ced.111f8",
+        "type": "ui_group",
+        "name": "Memoria",
+        "tab": "c9f63861.698908",
+        "order": 1,
+        "disp": true,
+        "width": 18,
+        "collapse": false
+    },
+    {
+        "id": "3b732fea.35239",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno00/raspberrypi/Temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "31d566ce.68745a"
+            ]
+        ]
+    },
+    {
+        "id": "31d566ce.68745a",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno00",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 720,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "659b1cd1.767874",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno04 /raspberry/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 260,
+        "y": 160,
+        "wires": [
+            [
+                "b50e4392.40af3"
+            ]
+        ]
+    },
+    {
+        "id": "b50e4392.40af3",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno04",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 720,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1dbce19b.35f08e",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno18/raspberrypi/Temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 270,
+        "y": 220,
+        "wires": [
+            [
+                "2e4c370e.cf3678"
+            ]
+        ]
+    },
+    {
+        "id": "2e4c370e.cf3678",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 3,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno18",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 720,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "6778e182.bc8cf",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno09/israelPi/temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 250,
+        "y": 280,
+        "wires": [
+            [
+                "436f5759.1f1cd8"
+            ]
+        ]
+    },
+    {
+        "id": "436f5759.1f1cd8",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 4,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno09",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 720,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a4431b69.ef8ee8",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno00/raspberrypi/CPU",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 240,
+        "y": 420,
+        "wires": [
+            [
+                "a505a07c.a4f53"
+            ]
+        ]
+    },
+    {
+        "id": "a505a07c.a4f53",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "e9b18395.21481",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno00",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 720,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "48c3c0c.9082e4",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno07/rasp/cpu_load",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 240,
+        "y": 480,
+        "wires": [
+            [
+                "45c5d4c.a6c792c"
+            ]
+        ]
+    },
+    {
+        "id": "45c5d4c.a6c792c",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "e9b18395.21481",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno07",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 720,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "552376ac.910b88",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno18/raspberrypi/CPU",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 240,
+        "y": 540,
+        "wires": [
+            [
+                "f3ab7945.b54898"
+            ]
+        ]
+    },
+    {
+        "id": "f3ab7945.b54898",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "e9b18395.21481",
+        "order": 3,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno18",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 720,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6e37bb92.119644",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno08/raspberrypi/CPU",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 240,
+        "y": 600,
+        "wires": [
+            [
+                "83f3263d.5b6148"
+            ]
+        ]
+    },
+    {
+        "id": "83f3263d.5b6148",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "e9b18395.21481",
+        "order": 5,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno08",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 720,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "41ba5959.bbaa08",
+        "type": "comment",
+        "z": "54ff78c4.b28db8",
+        "name": "Temperaturas",
+        "info": "",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "4438704e.efb44",
+        "type": "comment",
+        "z": "54ff78c4.b28db8",
+        "name": "CPUs",
+        "info": "",
+        "x": 110,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3c2f42b3.30b23e",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno00/raspberrypi/Memoria",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 260,
+        "y": 740,
+        "wires": [
+            [
+                "db0d5f6b.435e7"
+            ]
+        ]
+    },
+    {
+        "id": "db0d5f6b.435e7",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "e8c96ced.111f8",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno00",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#b50000",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "50",
+        "seg2": "100",
+        "x": 720,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "6a72df1b.36efe",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno07/rasp/memoria_libre",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 250,
+        "y": 800,
+        "wires": [
+            [
+                "b669da45.caf158"
+            ]
+        ]
+    },
+    {
+        "id": "23a64f7b.4db4e",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno18/raspberrypi/Memoria",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 260,
+        "y": 860,
+        "wires": [
+            [
+                "c013fb12.c397f8"
+            ]
+        ]
+    },
+    {
+        "id": "aae4b1ed.07da5",
+        "type": "mqtt in",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno08/raspberrypi/Memoria",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 260,
+        "y": 920,
+        "wires": [
+            [
+                "1de8ccfa.9d24b3"
+            ]
+        ]
+    },
+    {
+        "id": "4a9370f5.1bfc7",
+        "type": "comment",
+        "z": "54ff78c4.b28db8",
+        "name": "Memoria",
+        "info": "",
+        "x": 120,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "1de8ccfa.9d24b3",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "e8c96ced.111f8",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno08",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#b50000",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "50",
+        "seg2": "100",
+        "x": 720,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "c013fb12.c397f8",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "e8c96ced.111f8",
+        "order": 6,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno18",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#b50000",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "50",
+        "seg2": "100",
+        "x": 720,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "b669da45.caf158",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "e8c96ced.111f8",
+        "order": 7,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno07",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#b50000",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "50",
+        "seg2": "100",
+        "x": 720,
+        "y": 800,
+        "wires": []
+    }
+]
