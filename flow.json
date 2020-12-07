@@ -2,7 +2,21 @@
     {
         "id": "54ff78c4.b28db8",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Temperaturas",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a9bda9e.2a8d158",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3af81221.fe81ae",
+        "type": "tab",
+        "label": "Flow 3",
         "disabled": false,
         "info": ""
     },
@@ -36,7 +50,7 @@
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false,
+                "edited": true,
                 "reset": false
             },
             "darkTheme": {
@@ -157,7 +171,7 @@
         "tab": "f3e58850.661b88",
         "order": 1,
         "disp": true,
-        "width": "18",
+        "width": "15",
         "collapse": false
     },
     {
@@ -193,7 +207,8 @@
         "y": 100,
         "wires": [
             [
-                "31d566ce.68745a"
+                "31d566ce.68745a",
+                "13b31ca5.89b913"
             ]
         ]
     },
@@ -228,15 +243,16 @@
         "type": "mqtt in",
         "z": "54ff78c4.b28db8",
         "name": "",
-        "topic": "aprendiendonodered/alumno04 /raspberry/temperatura",
+        "topic": "aprendiendonodered/alumno08/raspberrypi/Temperatura",
         "qos": "2",
         "datatype": "auto",
         "broker": "620c0c7c.5e6ff4",
-        "x": 260,
+        "x": 270,
         "y": 160,
         "wires": [
             [
-                "b50e4392.40af3"
+                "b50e4392.40af3",
+                "81cc570c.868ac8"
             ]
         ]
     },
@@ -250,7 +266,7 @@
         "width": 3,
         "height": 3,
         "gtype": "gage",
-        "title": "Alumno04",
+        "title": "Alumno08",
         "label": "units",
         "format": "{{value}}",
         "min": 0,
@@ -279,7 +295,8 @@
         "y": 220,
         "wires": [
             [
-                "2e4c370e.cf3678"
+                "2e4c370e.cf3678",
+                "6cde8a36.f91bb4"
             ]
         ]
     },
@@ -322,7 +339,8 @@
         "y": 280,
         "wires": [
             [
-                "436f5759.1f1cd8"
+                "436f5759.1f1cd8",
+                "3fffebb4.533e94"
             ]
         ]
     },
@@ -353,26 +371,80 @@
         "wires": []
     },
     {
-        "id": "a4431b69.ef8ee8",
+        "id": "41ba5959.bbaa08",
+        "type": "comment",
+        "z": "54ff78c4.b28db8",
+        "name": "Temperaturas",
+        "info": "",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7611e139.162a9",
+        "type": "ui_gauge",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 5,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno13",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 720,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "fdb54aaa.f10c08",
         "type": "mqtt in",
         "z": "54ff78c4.b28db8",
+        "name": "",
+        "topic": "aprendiendonodered/alumno13/raspberrypi/Temperatura",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 270,
+        "y": 340,
+        "wires": [
+            [
+                "7611e139.162a9",
+                "4813a758.eaa368"
+            ]
+        ]
+    },
+    {
+        "id": "13e71942.7d9137",
+        "type": "mqtt in",
+        "z": "a9bda9e.2a8d158",
         "name": "",
         "topic": "aprendiendonodered/alumno00/raspberrypi/CPU",
         "qos": "2",
         "datatype": "auto",
         "broker": "620c0c7c.5e6ff4",
-        "x": 240,
-        "y": 420,
+        "x": 320,
+        "y": 100,
         "wires": [
             [
-                "a505a07c.a4f53"
+                "d15c9d90.6f494"
             ]
         ]
     },
     {
-        "id": "a505a07c.a4f53",
+        "id": "d15c9d90.6f494",
         "type": "ui_gauge",
-        "z": "54ff78c4.b28db8",
+        "z": "a9bda9e.2a8d158",
         "name": "",
         "group": "e9b18395.21481",
         "order": 1,
@@ -391,31 +463,31 @@
         ],
         "seg1": "50",
         "seg2": "75",
-        "x": 720,
-        "y": 420,
+        "x": 680,
+        "y": 100,
         "wires": []
     },
     {
-        "id": "48c3c0c.9082e4",
+        "id": "a4c4b6cd.59e228",
         "type": "mqtt in",
-        "z": "54ff78c4.b28db8",
+        "z": "a9bda9e.2a8d158",
         "name": "",
         "topic": "aprendiendonodered/alumno07/rasp/cpu_load",
         "qos": "2",
         "datatype": "auto",
         "broker": "620c0c7c.5e6ff4",
-        "x": 240,
-        "y": 480,
+        "x": 320,
+        "y": 160,
         "wires": [
             [
-                "45c5d4c.a6c792c"
+                "34126883.e0e008"
             ]
         ]
     },
     {
-        "id": "45c5d4c.a6c792c",
+        "id": "34126883.e0e008",
         "type": "ui_gauge",
-        "z": "54ff78c4.b28db8",
+        "z": "a9bda9e.2a8d158",
         "name": "",
         "group": "e9b18395.21481",
         "order": 2,
@@ -434,31 +506,31 @@
         ],
         "seg1": "50",
         "seg2": "75",
-        "x": 720,
-        "y": 480,
+        "x": 680,
+        "y": 160,
         "wires": []
     },
     {
-        "id": "552376ac.910b88",
+        "id": "1f82bb1f.88d7a5",
         "type": "mqtt in",
-        "z": "54ff78c4.b28db8",
+        "z": "a9bda9e.2a8d158",
         "name": "",
         "topic": "aprendiendonodered/alumno18/raspberrypi/CPU",
         "qos": "2",
         "datatype": "auto",
         "broker": "620c0c7c.5e6ff4",
-        "x": 240,
-        "y": 540,
+        "x": 320,
+        "y": 220,
         "wires": [
             [
-                "f3ab7945.b54898"
+                "f24f51b3.cce07"
             ]
         ]
     },
     {
-        "id": "f3ab7945.b54898",
+        "id": "f24f51b3.cce07",
         "type": "ui_gauge",
-        "z": "54ff78c4.b28db8",
+        "z": "a9bda9e.2a8d158",
         "name": "",
         "group": "e9b18395.21481",
         "order": 3,
@@ -477,31 +549,31 @@
         ],
         "seg1": "50",
         "seg2": "75",
-        "x": 720,
-        "y": 540,
+        "x": 680,
+        "y": 220,
         "wires": []
     },
     {
-        "id": "6e37bb92.119644",
+        "id": "4f469145.c6d3d",
         "type": "mqtt in",
-        "z": "54ff78c4.b28db8",
+        "z": "a9bda9e.2a8d158",
         "name": "",
         "topic": "aprendiendonodered/alumno08/raspberrypi/CPU",
         "qos": "2",
         "datatype": "auto",
         "broker": "620c0c7c.5e6ff4",
-        "x": 240,
-        "y": 600,
+        "x": 320,
+        "y": 280,
         "wires": [
             [
-                "83f3263d.5b6148"
+                "c6994ef7.5b07d"
             ]
         ]
     },
     {
-        "id": "83f3263d.5b6148",
+        "id": "c6994ef7.5b07d",
         "type": "ui_gauge",
-        "z": "54ff78c4.b28db8",
+        "z": "a9bda9e.2a8d158",
         "name": "",
         "group": "e9b18395.21481",
         "order": 5,
@@ -520,51 +592,41 @@
         ],
         "seg1": "50",
         "seg2": "75",
-        "x": 720,
-        "y": 600,
+        "x": 680,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "41ba5959.bbaa08",
+        "id": "896d3401.dbf198",
         "type": "comment",
-        "z": "54ff78c4.b28db8",
-        "name": "Temperaturas",
-        "info": "",
-        "x": 160,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "4438704e.efb44",
-        "type": "comment",
-        "z": "54ff78c4.b28db8",
+        "z": "a9bda9e.2a8d158",
         "name": "CPUs",
         "info": "",
-        "x": 110,
-        "y": 360,
+        "x": 183.33331298828125,
+        "y": 53.33332824707031,
         "wires": []
     },
     {
-        "id": "3c2f42b3.30b23e",
+        "id": "e45fbefb.78802",
         "type": "mqtt in",
-        "z": "54ff78c4.b28db8",
+        "z": "3af81221.fe81ae",
         "name": "",
         "topic": "aprendiendonodered/alumno00/raspberrypi/Memoria",
         "qos": "2",
         "datatype": "auto",
         "broker": "620c0c7c.5e6ff4",
-        "x": 260,
-        "y": 740,
+        "x": 240,
+        "y": 120,
         "wires": [
             [
-                "db0d5f6b.435e7"
+                "7054cb5e.75bd04"
             ]
         ]
     },
     {
-        "id": "db0d5f6b.435e7",
+        "id": "7054cb5e.75bd04",
         "type": "ui_gauge",
-        "z": "54ff78c4.b28db8",
+        "z": "3af81221.fe81ae",
         "name": "",
         "group": "e8c96ced.111f8",
         "order": 1,
@@ -583,75 +645,75 @@
         ],
         "seg1": "50",
         "seg2": "100",
-        "x": 720,
-        "y": 740,
+        "x": 700,
+        "y": 120,
         "wires": []
     },
     {
-        "id": "6a72df1b.36efe",
+        "id": "9417ae00.a50bc",
         "type": "mqtt in",
-        "z": "54ff78c4.b28db8",
+        "z": "3af81221.fe81ae",
         "name": "",
         "topic": "aprendiendonodered/alumno07/rasp/memoria_libre",
         "qos": "2",
         "datatype": "auto",
         "broker": "620c0c7c.5e6ff4",
-        "x": 250,
-        "y": 800,
+        "x": 230,
+        "y": 180,
         "wires": [
             [
-                "b669da45.caf158"
+                "58fa57f1.7c9808"
             ]
         ]
     },
     {
-        "id": "23a64f7b.4db4e",
+        "id": "2bf8eda0.4bfc92",
         "type": "mqtt in",
-        "z": "54ff78c4.b28db8",
+        "z": "3af81221.fe81ae",
         "name": "",
         "topic": "aprendiendonodered/alumno18/raspberrypi/Memoria",
         "qos": "2",
         "datatype": "auto",
         "broker": "620c0c7c.5e6ff4",
-        "x": 260,
-        "y": 860,
+        "x": 240,
+        "y": 240,
         "wires": [
             [
-                "c013fb12.c397f8"
+                "f47ca273.d43c"
             ]
         ]
     },
     {
-        "id": "aae4b1ed.07da5",
+        "id": "ac4b7227.9c911",
         "type": "mqtt in",
-        "z": "54ff78c4.b28db8",
+        "z": "3af81221.fe81ae",
         "name": "",
         "topic": "aprendiendonodered/alumno08/raspberrypi/Memoria",
         "qos": "2",
         "datatype": "auto",
         "broker": "620c0c7c.5e6ff4",
-        "x": 260,
-        "y": 920,
+        "x": 240,
+        "y": 300,
         "wires": [
             [
-                "1de8ccfa.9d24b3"
+                "54ec6cc4.52f454"
             ]
         ]
     },
     {
-        "id": "4a9370f5.1bfc7",
+        "id": "9974f43d.f4dbe8",
         "type": "comment",
-        "z": "54ff78c4.b28db8",
+        "z": "3af81221.fe81ae",
         "name": "Memoria",
         "info": "",
-        "x": 120,
-        "y": 680,
+        "x": 100,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "1de8ccfa.9d24b3",
+        "id": "54ec6cc4.52f454",
         "type": "ui_gauge",
-        "z": "54ff78c4.b28db8",
+        "z": "3af81221.fe81ae",
         "name": "",
         "group": "e8c96ced.111f8",
         "order": 2,
@@ -670,14 +732,14 @@
         ],
         "seg1": "50",
         "seg2": "100",
-        "x": 720,
-        "y": 920,
+        "x": 700,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "c013fb12.c397f8",
+        "id": "f47ca273.d43c",
         "type": "ui_gauge",
-        "z": "54ff78c4.b28db8",
+        "z": "3af81221.fe81ae",
         "name": "",
         "group": "e8c96ced.111f8",
         "order": 6,
@@ -696,14 +758,14 @@
         ],
         "seg1": "50",
         "seg2": "100",
-        "x": 720,
-        "y": 860,
+        "x": 700,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "b669da45.caf158",
+        "id": "58fa57f1.7c9808",
         "type": "ui_gauge",
-        "z": "54ff78c4.b28db8",
+        "z": "3af81221.fe81ae",
         "name": "",
         "group": "e8c96ced.111f8",
         "order": 7,
@@ -722,8 +784,309 @@
         ],
         "seg1": "50",
         "seg2": "100",
-        "x": 720,
-        "y": 800,
+        "x": 700,
+        "y": 180,
         "wires": []
+    },
+    {
+        "id": "cedff586.ba7768",
+        "type": "mqtt in",
+        "z": "a9bda9e.2a8d158",
+        "name": "",
+        "topic": "aprendiendonodered/alumno13/raspberrypi/CPU",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "9fc55785.8181e8"
+            ]
+        ]
+    },
+    {
+        "id": "9fc55785.8181e8",
+        "type": "ui_gauge",
+        "z": "a9bda9e.2a8d158",
+        "name": "",
+        "group": "e9b18395.21481",
+        "order": 5,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno13",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "x": 680,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e6f61bd5.683ed8",
+        "type": "mqtt in",
+        "z": "3af81221.fe81ae",
+        "name": "",
+        "topic": "aprendiendonodered/alumno13/raspberrypi/Memoria",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "620c0c7c.5e6ff4",
+        "x": 240,
+        "y": 360,
+        "wires": [
+            [
+                "5cb27068.f1c7a"
+            ]
+        ]
+    },
+    {
+        "id": "5cb27068.f1c7a",
+        "type": "ui_gauge",
+        "z": "3af81221.fe81ae",
+        "name": "",
+        "group": "e8c96ced.111f8",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Alumno13",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#b50000",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "50",
+        "seg2": "100",
+        "x": 700,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "13b31ca5.89b913",
+        "type": "ui_chart",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 6,
+        "width": 3,
+        "height": 3,
+        "label": "Alumno00",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 730,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4813a758.eaa368",
+        "type": "ui_chart",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 10,
+        "width": 3,
+        "height": 3,
+        "label": "Alumno13",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 840,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3fffebb4.533e94",
+        "type": "ui_chart",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 9,
+        "width": 3,
+        "height": 3,
+        "label": "alumno09",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 840,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6cde8a36.f91bb4",
+        "type": "ui_chart",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 8,
+        "width": 3,
+        "height": 3,
+        "label": "Alumno18",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 840,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "81cc570c.868ac8",
+        "type": "ui_chart",
+        "z": "54ff78c4.b28db8",
+        "name": "",
+        "group": "3a1649ac.9d3a66",
+        "order": 7,
+        "width": 3,
+        "height": 3,
+        "label": "Alumno08",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 860,
+        "y": 120,
+        "wires": [
+            []
+        ]
     }
 ]
